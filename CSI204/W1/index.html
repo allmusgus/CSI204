@@ -1,246 +1,339 @@
 <!doctype html>
-<html>
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Royal Sound Mart ร้านเครื่องดนตรีออนไลน์และอุปกรณ์สตูดิโอสำหรับนักดนตรีทุกระดับ">
+  <title>Royal Sound Mart | ร้านเครื่องดนตรีออนไลน์</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Prompt', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 18px 40px rgba(0, 0, 0, 0.22)'
+          }
+        }
+      }
+    };
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-stone-50" style="font-family: 'Prompt', sans-serif;">
-  <div class="min-h-screen text-gray-800">
-    <!-- SECTION 1: Header + Carousel -->
-    <section class="bg-beige-50 border-b border-beige-200">
-      <!-- Header -->
-      <header class="max-w-6xl mx-auto px-4 md:px-6 py-5 flex items-center justify-between sticky top-0 z-50 bg-beige-50">
-        <a href="#" class="text-2xl font-bold text-beige-900 tracking-tight">ShopHub</a>
-        <nav class="hidden md:flex items-center gap-10 text-sm font-medium">
-          <a href="#popular" class="text-gray-700 hover:text-beige-900 transition">สินค้าเด่น</a>
-          <a href="#recommended" class="text-gray-700 hover:text-beige-900 transition">สินค้าแนะนำ</a>
+<body id="top" class="font-sans bg-[#0b0d12] text-slate-100 antialiased">
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(255,122,24,0.16),_transparent_24%),radial-gradient(circle_at_top_right,_rgba(19,184,166,0.12),_transparent_20%),linear-gradient(180deg,#0b0d12_0%,#111621_48%,#0d1117_100%)]">
+    <div class="bg-gradient-to-r from-orange-500 to-amber-400 px-4 py-3 text-center text-sm font-bold text-[#1b1205]">
+      ส่งฟรีเมื่อสั่งครบ 1,500 บาท | ผ่อน 0% สูงสุด 6 เดือน | ตรวจเช็กก่อนส่งทุกชิ้น
+    </div>
+
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/75 backdrop-blur-xl">
+      <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:px-6">
+        <a class="flex items-center gap-3" href="#top" aria-label="Royal Sound Mart home">
+          <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-orange-500 to-rose-500 text-lg font-extrabold text-white shadow-soft">R</span>
+          <span class="flex flex-col leading-tight">
+            <strong class="text-[1.05rem] tracking-tight">Royal Sound Mart</strong>
+            <small class="text-xs text-slate-400">Music gear marketplace</small>
+          </span>
+        </a>
+
+        <nav id="site-nav" class="absolute left-0 right-0 top-full hidden flex-col gap-4 border-b border-white/10 bg-slate-950/95 px-4 py-4 text-sm font-semibold text-slate-200 md:static md:flex md:flex-row md:items-center md:gap-6 md:border-0 md:bg-transparent md:px-0 md:py-0">
+          <a class="transition hover:text-white" href="#categories">หมวดสินค้า</a>
+          <a class="transition hover:text-white" href="#featured">สินค้าแนะนำ</a>
+          <a class="transition hover:text-white" href="#services">บริการ</a>
+          <a class="transition hover:text-white" href="#contact">ติดต่อ</a>
         </nav>
-        <button class="md:hidden text-beige-900" aria-label="Open menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </header>
 
-      <!-- Carousel -->
-      <div class="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16">
-        <div class="flex items-center gap-3 mb-8">
-          <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M13.5.67s.798 2.735.73 6.513h5.744c-1.422 4.265-7.119 15.074-9.625 20.855-2.147-5.694-6.788-16.04-7.832-20.855h5.993c-.041-3.778.73-6.513.73-6.513H13.5z"></path>
-          </svg>
-          <h2 class="text-xl md:text-2xl font-bold text-beige-900">สินค้าลดราคา & ยอดนิยม</h2>
-        </div>
-        <div class="carousel-container relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <div class="carousel-slide flex transition-transform duration-500" id="carousel">
-            <!-- Slide 1 -->
-            <div class="carousel-item min-w-full px-6 md:px-8 py-10 md:py-12 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div class="w-full md:w-1/2">
-                <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-red-600 rounded-full mb-4">ลดราคา 40%</span>
-                <h3 class="text-3xl md:text-4xl font-bold text-beige-900 mb-3 leading-tight">หูฟังไร้สาย</h3>
-                <p class="text-gray-600 mb-6 text-base leading-relaxed">เสียงชัด ตัดเสียงรบกวน แบตเตอรี่ยาว 30 ชั่วโมง</p>
-                <div class="flex items-center gap-4 mb-8">
-                  <span class="text-3xl font-bold text-beige-700">฿1,590</span>
-                  <span class="text-lg text-gray-400 line-through">฿2,690</span>
-                </div>
-                <button class="w-full md:w-auto px-7 py-3 bg-beige-700 hover:bg-beige-800 text-white font-semibold rounded-lg transition duration-200 transform hover:scale-105">เพิ่มลงรถเข็น</button>
-              </div>
-              <div class="w-full md:w-1/2 flex justify-center">
-                <img src="https://via.placeholder.com/300x300.png?text=Headphones" alt="Product" class="w-full max-w-sm rounded-xl shadow-md">
-              </div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="carousel-item min-w-full px-6 md:px-8 py-10 md:py-12 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div class="w-full md:w-1/2">
-                <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-red-600 rounded-full mb-4">ลดราคา 30%</span>
-                <h3 class="text-3xl md:text-4xl font-bold text-beige-900 mb-3 leading-tight">สมาร์ทวอตช์</h3>
-                <p class="text-gray-600 mb-6 text-base leading-relaxed">จอสัมผัส วัดชีพจร ติดตามกิจกรรม กันน้ำ</p>
-                <div class="flex items-center gap-4 mb-8">
-                  <span class="text-3xl font-bold text-beige-700">฿4,490</span>
-                  <span class="text-lg text-gray-400 line-through">฿6,690</span>
-                </div>
-                <button class="w-full md:w-auto px-7 py-3 bg-beige-700 hover:bg-beige-800 text-white font-semibold rounded-lg transition duration-200 transform hover:scale-105">เพิ่มลงรถเข็น</button>
-              </div>
-              <div class="w-full md:w-1/2 flex justify-center">
-                <img src="https://via.placeholder.com/300x300.png?text=Smartwatch" alt="Product" class="w-full max-w-sm rounded-xl shadow-md">
-              </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="carousel-item min-w-full px-6 md:px-8 py-10 md:py-12 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div class="w-full md:w-1/2">
-                <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-red-600 rounded-full mb-4">ลดราคา 25%</span>
-                <h3 class="text-3xl md:text-4xl font-bold text-beige-900 mb-3 leading-tight">ลำโพงพกพา</h3>
-                <p class="text-gray-600 mb-6 text-base leading-relaxed">เสียงดีเยี่ยม กันน้ำ ใช้ได้ 12 ชั่วโมง</p>
-                <div class="flex items-center gap-4 mb-8">
-                  <span class="text-3xl font-bold text-beige-700">฿1,790</span>
-                  <span class="text-lg text-gray-400 line-through">฿2,390</span>
-                </div>
-                <button class="w-full md:w-auto px-7 py-3 bg-beige-700 hover:bg-beige-800 text-white font-semibold rounded-lg transition duration-200 transform hover:scale-105">เพิ่มลงรถเข็น</button>
-              </div>
-              <div class="w-full md:w-1/2 flex justify-center">
-                <img src="https://via.placeholder.com/300x300.png?text=Speaker" alt="Product" class="w-full max-w-sm rounded-xl shadow-md">
-              </div>
-            </div>
-          </div>
-          <!-- Controls -->
-          <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-beige-700 hover:bg-beige-800 text-white p-2.5 rounded-full transition shadow-md z-10" onclick="prevSlide()" aria-label="Previous slide">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
+        <div class="flex items-center gap-2">
+          <button id="search-toggle" type="button" class="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-slate-800/80 text-white transition hover:-translate-y-0.5 hover:bg-slate-700 md:h-12 md:w-12" aria-label="เปิดหรือปิดช่องค้นหา">
+            <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true"><path d="M10.5 4a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Zm-8.5 6.5a8.5 8.5 0 1 1 15.01 5.48l4.2 4.21-1.42 1.42-4.21-4.2A8.5 8.5 0 0 1 2 10.5Z" /></svg>
           </button>
-          <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-beige-700 hover:bg-beige-800 text-white p-2.5 rounded-full transition shadow-md z-10" onclick="nextSlide()" aria-label="Next slide">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+
+          <button id="cart-toggle" type="button" class="inline-flex h-11 items-center gap-2 rounded-2xl border border-amber-400/25 bg-gradient-to-br from-orange-500/15 to-amber-400/10 px-4 font-bold text-white transition hover:-translate-y-0.5 md:h-12" aria-label="เปิดรถเข็น">
+            <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true"><path d="M7 4H3v2h2.2l2.1 9.5A2.5 2.5 0 0 0 9.8 18H18a2 2 0 0 0 1.8-1.1l2.8-5.6A1 1 0 0 0 21.7 10H8.1L7.6 8H21V6H7.4L7 4Zm2.2 10.2-.6-2.8H19.1l-2 4H9.8a.5.5 0 0 1-.5-.4Z" /></svg>
+            <span class="hidden sm:inline">รถเข็น</span>
+            <strong id="cart-count" class="grid h-5 min-w-5 place-items-center rounded-full bg-orange-500 px-1 text-[0.72rem] leading-none text-white">0</strong>
+          </button>
+
+          <button id="menu-toggle" type="button" class="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-slate-800/80 text-white transition hover:-translate-y-0.5 md:hidden" aria-label="เปิดเมนู">
+            <span class="flex flex-col gap-1.5">
+              <span class="h-0.5 w-4 rounded-full bg-white"></span>
+              <span class="h-0.5 w-4 rounded-full bg-white"></span>
+              <span class="h-0.5 w-4 rounded-full bg-white"></span>
+            </span>
           </button>
         </div>
-        <!-- Dots -->
-        <div class="flex justify-center gap-2 mt-6">
-          <span class="dot w-2.5 h-2.5 bg-beige-700 rounded-full cursor-pointer transition" onclick="currentSlide(0)"></span>
-          <span class="dot w-2.5 h-2.5 bg-beige-300 rounded-full cursor-pointer transition hover:bg-beige-400" onclick="currentSlide(1)"></span>
-          <span class="dot w-2.5 h-2.5 bg-beige-300 rounded-full cursor-pointer transition hover:bg-beige-400" onclick="currentSlide(2)"></span>
-        </div>
       </div>
-    </section>
 
-    <!-- SECTION 2: Recommended Products -->
-    <section id="recommended" class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-20">
-      <div class="flex items-center gap-3 mb-10">
-        <svg class="w-7 h-7 text-beige-700" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-        </svg>
-        <h2 class="text-2xl md:text-3xl font-bold text-beige-900">สินค้าแนะนำสำหรับคุณ</h2>
+      <div id="header-search" hidden class="mx-auto w-full max-w-7xl px-4 pb-4 lg:px-6">
+        <label class="sr-only" for="search-input">ค้นหาสินค้า</label>
+        <input id="search-input" type="search" class="w-full rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-3 text-slate-100 placeholder:text-slate-400 focus:border-amber-400 focus:outline-none" placeholder="ค้นหา กีตาร์ คีย์บอร์ด ไมค์ แอมป์ หรืออุปกรณ์อื่นๆ">
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        <!-- Product 1 -->
-        <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-          <div class="relative overflow-hidden bg-beige-100 h-48">
-            <img src="https://via.placeholder.com/400x300.png?text=Product+A" alt="Product A" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-          </div>
-          <div class="p-5">
-            <h3 class="font-bold text-beige-900 text-lg">สายชาร์จเร็ว USB-C</h3>
-            <p class="mt-2 text-sm text-gray-600 leading-relaxed">ชาร์จเต็ม 30 นาที เก่าแก่ทนทาน</p>
-            <div class="mt-5 flex items-center justify-between">
-              <span class="text-xl font-bold text-beige-700">฿290</span>
-              <button class="px-4 py-2 bg-beige-700 hover:bg-beige-800 text-white text-sm font-semibold rounded-lg transition duration-200 transform hover:scale-105">เพิ่ม</button>
-            </div>
-          </div>
-        </article>
-        <!-- Product 2 -->
-        <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-          <div class="relative overflow-hidden bg-beige-100 h-48">
-            <img src="https://via.placeholder.com/400x300.png?text=Product+B" alt="Product B" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-          </div>
-          <div class="p-5">
-            <h3 class="font-bold text-beige-900 text-lg">ฟิล์มกระจกกันรอยจอ</h3>
-            <p class="mt-2 text-sm text-gray-600 leading-relaxed">ใสราคา ติดง่าย ขูดยาก</p>
-            <div class="mt-5 flex items-center justify-between">
-              <span class="text-xl font-bold text-beige-700">฿179</span>
-              <button class="px-4 py-2 bg-beige-700 hover:bg-beige-800 text-white text-sm font-semibold rounded-lg transition duration-200 transform hover:scale-105">เพิ่ม</button>
-            </div>
-          </div>
-        </article>
-        <!-- Product 3 -->
-        <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-          <div class="relative overflow-hidden bg-beige-100 h-48">
-            <img src="https://via.placeholder.com/400x300.png?text=Product+C" alt="Product C" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-          </div>
-          <div class="p-5">
-            <h3 class="font-bold text-beige-900 text-lg">เคสกันกระแทก</h3>
-            <p class="mt-2 text-sm text-gray-600 leading-relaxed">ป้องกันสูงสุด ดีไซน์สวย</p>
-            <div class="mt-5 flex items-center justify-between">
-              <span class="text-xl font-bold text-beige-700">฿399</span>
-              <button class="px-4 py-2 bg-beige-700 hover:bg-beige-800 text-white text-sm font-semibold rounded-lg transition duration-200 transform hover:scale-105">เพิ่ม</button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
+    </header>
 
-    <!-- SECTION 3: Footer -->
-    <footer class="bg-beige-900 text-beige-50 mt-16 md:mt-24">
-      <div class="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-10">
-          <div>
-            <h4 class="font-bold text-lg text-white mb-3">ShopHub</h4>
-            <p class="text-sm leading-relaxed opacity-90">ช้อปเปลี่ยน สินค้าคุณภาพในราคาเป็นธรรม</p>
-          </div>
-          <div>
-            <h5 class="font-semibold text-white mb-4">ติดต่อเรา</h5>
-            <div class="space-y-3">
-              <div class="flex items-center gap-3">
-                <svg class="w-5 h-5 flex-shrink-0 opacity-75" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path>
-                </svg>
-                <span class="text-sm opacity-90">02-xxx-xxxx</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <svg class="w-5 h-5 flex-shrink-0 opacity-75" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
-                </svg>
-                <span class="text-sm opacity-90">support@shophub.th</span>
-              </div>
+    <main class="mx-auto w-full max-w-7xl px-4 py-10 lg:px-6 lg:py-14">
+      <section class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-amber-400">Ecommerce พร้อมต่อยอดจริง</span>
+          <h1 class="mt-4 max-w-[12ch] text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl lg:text-6xl">ค้นหาเครื่องดนตรีที่ใช่ สำหรับซ้อม อัดเสียง และขึ้นเวที</h1>
+          <p class="mt-5 max-w-2xl text-sm leading-8 text-slate-300 sm:text-base">ออกแบบหน้า storefront ให้ครบทั้งภาพลักษณ์แบรนด์ การค้นหาสินค้า การเลือกหมวดหมู่ และรถเข็นเบื้องต้น เพื่อใช้เป็นต้นแบบผลิตภัณฑ์ที่พัฒนาต่อเป็นระบบจริงได้</p>
+
+          <div class="mt-7 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-soft">
+              <strong class="block text-xl font-bold text-white">120+</strong>
+              <span class="mt-1 block text-sm text-slate-400">สินค้าในสต็อก</span>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-soft">
+              <strong class="block text-xl font-bold text-white">24 ชม.</strong>
+              <span class="mt-1 block text-sm text-slate-400">ตอบแชตและปิดออเดอร์</span>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-soft">
+              <strong class="block text-xl font-bold text-white">4.9/5</strong>
+              <span class="mt-1 block text-sm text-slate-400">คะแนนจากลูกค้า</span>
             </div>
           </div>
-          <div>
-            <h5 class="font-semibold text-white mb-4">ช่องทาง</h5>
-            <div class="flex gap-4">
-              <a href="#" class="p-2 rounded-lg bg-beige-800 hover:bg-beige-700 transition" aria-label="Facebook">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
-                </svg>
-              </a>
-              <a href="#" class="p-2 rounded-lg bg-beige-800 hover:bg-beige-700 transition" aria-label="Instagram">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.117.63c-.88.296-1.613.678-2.324 1.39-.71.71-1.093 1.44-1.39 2.324-.297.787-.5 1.657-.56 2.935C.015 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.263 2.148.56 2.935.296.884.68 1.615 1.39 2.325.71.71 1.44 1.093 2.324 1.39.787.296 1.657.499 2.935.559C8.333 23.985 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.263 2.935-.559.884-.297 1.615-.68 2.325-1.39.71-.71 1.093-1.44 1.39-2.324.296-.787.499-1.657.559-2.935.072-1.28.087-1.687.087-4.947s-.015-3.667-.072-4.947c-.06-1.277-.263-2.148-.559-2.935-.297-.884-.68-1.615-1.39-2.325-.71-.71-1.44-1.093-2.324-1.39-.787-.297-1.657-.5-2.935-.56C15.667.015 15.26 0 12 0zm0 2.16c3.203 0 3.585.009 4.849.070 1.171.054 1.805.244 2.227.408.56.217.96.477 1.382.896.419.42.679.822.896 1.381.164.422.354 1.057.408 2.227.061 1.264.07 1.646.07 4.849s-.009 3.585-.07 4.849c-.054 1.171-.244 1.805-.408 2.227-.217.56-.477.96-.896 1.382-.42.419-.822.679-1.381.896-.422.164-1.057.354-2.227.408-1.264.061-1.646.07-4.849.07s-3.585-.009-4.849-.07c-1.171-.054-1.805-.244-2.227-.408-.56-.217-.96-.477-1.382-.896-.419-.42-.679-.822-.896-1.381-.164-.422-.354-1.057-.408-2.227-.061-1.264-.07-1.646-.07-4.849s.009-3.585.07-4.849c.054-1.171.244-1.805.408-2.227.217-.56.477-.96.896-1.382.42-.419.822-.679 1.381-.896.422-.164 1.057-.354 2.227-.408 1.264-.061 1.646-.07 4.849-.07zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"></path>
-                </svg>
-              </a>
+
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-rose-500 px-5 py-3 text-sm font-bold text-white shadow-soft transition hover:-translate-y-0.5" href="#featured">เลือกซื้อทันที</a>
+            <a class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-bold text-slate-100 transition hover:-translate-y-0.5 hover:bg-white/10" href="#services">ดูบริการร้าน</a>
+          </div>
+        </div>
+
+        <div class="grid gap-4">
+          <div class="min-h-[340px] rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(18,22,29,0.16),rgba(18,22,29,0.78)),url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center p-5 shadow-soft flex flex-col justify-end">
+            <span class="mb-3 inline-flex w-fit rounded-full bg-gradient-to-r from-orange-500 to-rose-500 px-3 py-1 text-xs font-bold text-white">Best Seller</span>
+            <h2 class="text-2xl font-extrabold tracking-tight text-white">Acoustic Starter Bundle</h2>
+            <p class="mt-2 text-sm text-slate-300">กีตาร์โปร่ง, ปิ๊ก, กระเป๋า, สายสำรอง และจูนเนอร์</p>
+            <div class="mt-4 flex items-baseline gap-3">
+              <strong class="text-2xl font-extrabold text-white">฿7,990</strong>
+              <span class="text-sm text-slate-400 line-through">฿9,690</span>
+            </div>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-[1.6rem] border border-white/10 bg-gradient-to-br from-orange-500/20 to-white/5 p-5 shadow-soft">
+              <span class="mb-3 inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-white">Studio Ready</span>
+              <h3 class="text-lg font-bold text-white">ไมค์และอุปกรณ์บันทึกเสียง</h3>
+            </div>
+            <div class="rounded-[1.6rem] border border-white/10 bg-gradient-to-br from-emerald-400/20 to-white/5 p-5 shadow-soft">
+              <span class="mb-3 inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-white">Live Sound</span>
+              <h3 class="text-lg font-bold text-white">มิกเซอร์ แอมป์ และ PA System</h3>
             </div>
           </div>
         </div>
-        <hr class="border-beige-800 mb-6">
-        <div class="text-center text-sm opacity-75">
-          © <span id="year"></span> ShopHub Thailand. All rights reserved.
+      </section>
+
+      <section class="mt-8 grid gap-4 md:grid-cols-3">
+        <article class="rounded-[1.6rem] border border-white/10 bg-white/5 p-5 shadow-soft">
+          <h3 class="text-lg font-bold text-white">เลือกง่าย</h3>
+          <p class="mt-2 text-sm leading-7 text-slate-400">จัดหมวดชัดเจน ตั้งแต่กีตาร์ คีย์บอร์ด กลอง ไปจนถึงอุปกรณ์เสริม</p>
+        </article>
+        <article class="rounded-[1.6rem] border border-white/10 bg-white/5 p-5 shadow-soft">
+          <h3 class="text-lg font-bold text-white">สต็อกพร้อม</h3>
+          <p class="mt-2 text-sm leading-7 text-slate-400">โครงสร้างข้อมูลสินค้าเหมาะกับการต่อเข้าระบบหลังบ้านหรือ CMS ได้ทันที</p>
+        </article>
+        <article class="rounded-[1.6rem] border border-white/10 bg-white/5 p-5 shadow-soft">
+          <h3 class="text-lg font-bold text-white">ซื้อมั่นใจ</h3>
+          <p class="mt-2 text-sm leading-7 text-slate-400">มีข้อมูลสเปก รีวิว คะแนน และการรับประกันเพื่อช่วยตัดสินใจก่อนซื้อ</p>
+        </article>
+      </section>
+
+      <section id="categories" class="mt-14">
+        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-amber-400">หมวดสินค้า</span>
+            <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-white">เลือกตามประเภทที่ต้องการ</h2>
+          </div>
+          <p class="max-w-xl text-sm leading-7 text-slate-300">ช่วยให้ผู้ใช้ค้นหาอุปกรณ์ที่เหมาะกับการใช้งานจริงได้เร็วขึ้น</p>
         </div>
+
+        <div class="mt-5 grid gap-3 md:grid-cols-5">
+          <button class="category-card rounded-2xl border border-white/10 bg-white/5 p-4 text-left shadow-soft transition hover:-translate-y-0.5 is-active" data-filter="all" type="button">
+            <span class="block text-sm text-slate-400">ทั้งหมด</span>
+            <strong class="mt-1 block text-lg font-bold text-white">8 รายการ</strong>
+          </button>
+          <button class="category-card rounded-2xl border border-white/10 bg-white/5 p-4 text-left shadow-soft transition hover:-translate-y-0.5" data-filter="guitar" type="button">
+            <span class="block text-sm text-slate-400">กีตาร์</span>
+            <strong class="mt-1 block text-lg font-bold text-white">3 รายการ</strong>
+          </button>
+          <button class="category-card rounded-2xl border border-white/10 bg-white/5 p-4 text-left shadow-soft transition hover:-translate-y-0.5" data-filter="keyboard" type="button">
+            <span class="block text-sm text-slate-400">คีย์บอร์ด</span>
+            <strong class="mt-1 block text-lg font-bold text-white">1 รายการ</strong>
+          </button>
+          <button class="category-card rounded-2xl border border-white/10 bg-white/5 p-4 text-left shadow-soft transition hover:-translate-y-0.5" data-filter="drum" type="button">
+            <span class="block text-sm text-slate-400">กลอง</span>
+            <strong class="mt-1 block text-lg font-bold text-white">1 รายการ</strong>
+          </button>
+          <button class="category-card rounded-2xl border border-white/10 bg-white/5 p-4 text-left shadow-soft transition hover:-translate-y-0.5" data-filter="audio" type="button">
+            <span class="block text-sm text-slate-400">ออดิโอ</span>
+            <strong class="mt-1 block text-lg font-bold text-white">3 รายการ</strong>
+          </button>
+        </div>
+      </section>
+
+      <section id="featured" class="mt-14">
+        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-amber-400">สินค้าแนะนำ</span>
+            <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-white">ตัวอย่างสินค้าที่พร้อมใช้งานจริง</h2>
+          </div>
+          <div class="flex items-center justify-between gap-4">
+            <p id="result-count" class="text-sm text-slate-400">แสดงสินค้า 0 รายการ</p>
+            <div class="relative w-64 max-w-full after:pointer-events-none after:absolute after:right-4 after:top-1/2 after:h-2 after:w-2 after:-translate-y-1/2 after:rotate-45 after:border-r-2 after:border-b-2 after:border-slate-200 after:content-['']">
+              <select id="sort-select" aria-label="เรียงลำดับสินค้า" class="w-full appearance-none rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-3 pr-12 text-slate-100 shadow-soft outline-none transition focus:border-amber-400">
+                <option value="featured">เรียงตามความนิยม</option>
+                <option value="price-asc">ราคาต่ำไปสูง</option>
+                <option value="price-desc">ราคาสูงไปต่ำ</option>
+                <option value="rating-desc">คะแนนสูงสุด</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="product-grid" class="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4"></div>
+      </section>
+
+      <section id="services" class="mt-14 grid gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+        <div class="rounded-[2rem] border border-white/10 bg-gradient-to-br from-green-400/20 to-white/5 p-5 shadow-soft">
+          <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-amber-400">บริการที่ร้านมีให้</span>
+          <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-white">บริการที่ลูกค้าใช้ได้ทันที</h2>
+          <div class="mt-5 grid gap-3 sm:grid-cols-2">
+            <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-soft">
+              <strong class="block text-base font-bold text-white">ตั้งสายและเช็กก่อนส่ง</strong>
+              <span class="mt-2 block text-sm leading-7 text-slate-400">เหมาะกับกีตาร์และเบสที่ต้องพร้อมเล่นทันที</span>
+            </article>
+            <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-soft">
+              <strong class="block text-base font-bold text-white">เซ็ตอัปห้องซ้อม</strong>
+              <span class="mt-2 block text-sm leading-7 text-slate-400">ช่วยวางอุปกรณ์ให้เหมาะกับพื้นที่จริง</span>
+            </article>
+            <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-soft">
+              <strong class="block text-base font-bold text-white">ผ่อนชำระและใบกำกับภาษี</strong>
+              <span class="mt-2 block text-sm leading-7 text-slate-400">รองรับทั้งลูกค้าทั่วไปและลูกค้าองค์กร</span>
+            </article>
+            <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-soft">
+              <strong class="block text-base font-bold text-white">เคลมและบริการหลังการขาย</strong>
+              <span class="mt-2 block text-sm leading-7 text-slate-400">คุยต่อกับร้านได้ตรงๆ ผ่านแชตหรืออีเมล</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-white/10 bg-gradient-to-br from-orange-400/20 to-white/5 p-5 shadow-soft">
+          <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-amber-400">บริการยอดนิยม</span>
+          <h3 class="mt-2 text-3xl font-extrabold tracking-tight text-white">บริการที่ลูกค้ากดใช้บ่อยที่สุด</h3>
+          <div class="mt-5 grid gap-3 sm:grid-cols-2">
+            <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-soft">
+              <strong class="block text-base font-bold text-white">48 ชม.</strong>
+              <span class="mt-2 block text-sm leading-7 text-slate-400">จัดส่งในเขตกรุงเทพฯ</span>
+            </article>
+            <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-soft">
+              <strong class="block text-base font-bold text-white">365 วัน</strong>
+              <span class="mt-2 block text-sm leading-7 text-slate-400">รับประกันสินค้าบางรายการ</span>
+            </article>
+            <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-soft">
+              <strong class="block text-base font-bold text-white">ทดลองเสียง</strong>
+              <span class="mt-2 block text-sm leading-7 text-slate-400">มีเครื่องให้ลองหน้าร้าน</span>
+            </article>
+            <article class="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-soft">
+              <strong class="block text-base font-bold text-white">ปรึกษาเซ็ตอัป</strong>
+              <span class="mt-2 block text-sm leading-7 text-slate-400">ช่วยเลือกสเปกให้เหมาะกับงาน</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-14">
+        <div class="flex flex-col gap-3 md:items-start">
+          <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-amber-400">เสียงจากลูกค้า</span>
+          <h2 class="text-3xl font-extrabold tracking-tight text-white">ความน่าเชื่อถือของร้านควรถูกสื่อสารให้ชัด</h2>
+        </div>
+        <div class="mt-5 grid gap-4 md:grid-cols-3">
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-soft">
+            <p class="text-sm leading-8 text-slate-300">“ผมสั่งสายกีตาร์กับคาโป้ไปแล้ว รอบก่อนของถึงเร็วและแพ็กมาดีมาก เดี๋ยวจะกลับมาดูแอมป์ต่อ”</p>
+            <strong class="mt-4 block text-sm font-bold text-white">เอก / มือกีตาร์ห้องซ้อม</strong>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-soft">
+            <p class="text-sm leading-8 text-slate-300">“ชอบที่มีหมวดกลองกับออดิโอแยกชัด ผมมองหาไมค์ร้องกับอินเตอร์เฟซอยู่พอดี เลือกง่ายกว่าร้านอื่น”</p>
+            <strong class="mt-4 block text-sm font-bold text-white">แนท / คนอัดเสียงที่บ้าน</strong>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-soft">
+            <p class="text-sm leading-8 text-slate-300">“ลองกีตาร์ในร้านแล้วเสียงดีเกินราคา พนักงานตอบเรื่องสเปกตรงดี ไม่ยัดของเกินความจำเป็น”</p>
+            <strong class="mt-4 block text-sm font-bold text-white">บอย / มือเบสที่เล่นบาร์คืนวันศุกร์</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="mt-14 rounded-[2rem] border border-white/10 bg-gradient-to-br from-orange-500/15 to-emerald-400/10 p-5 shadow-soft md:p-6 lg:flex lg:items-center lg:justify-between lg:gap-6">
+        <div>
+          <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-amber-400">สมัครรับข่าวสาร</span>
+          <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-white">รับโปรโมชันและสินค้าใหม่ก่อนใคร</h2>
+        </div>
+        <form class="mt-4 flex w-full flex-col gap-3 sm:flex-row lg:mt-0 lg:max-w-xl">
+          <input type="email" class="w-full rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-3 text-slate-100 placeholder:text-slate-400 focus:border-amber-400 focus:outline-none" placeholder="กรอกอีเมลสำหรับรับข่าวสาร" aria-label="อีเมลสำหรับสมัครข่าวสาร">
+          <button class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-rose-500 px-5 py-3 text-sm font-bold text-white shadow-soft transition hover:-translate-y-0.5" type="submit">สมัครเลย</button>
+        </form>
+      </section>
+    </main>
+
+    <footer id="contact" class="border-t border-white/10 bg-slate-950/60">
+      <div class="mx-auto grid w-full max-w-7xl gap-6 px-4 py-8 lg:grid-cols-[1.6fr_0.8fr_0.8fr] lg:px-6">
+        <div>
+          <div class="flex items-center gap-3">
+            <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-orange-500 to-rose-500 text-lg font-extrabold text-white">A</span>
+            <span class="flex flex-col leading-tight">
+              <strong class="text-[1.05rem] tracking-tight text-white">Royal Sound Mart</strong>
+              <small class="text-xs text-slate-400">ร้านเครื่องดนตรีออนไลน์</small>
+            </span>
+          </div>
+          <p class="mt-4 max-w-xl text-sm leading-8 text-slate-400">ออกแบบเพื่อการต่อยอดเป็น ecommerce product ที่ใช้งานได้จริงทั้งฝั่งลูกค้าและผู้ดูแลร้าน</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white">ติดต่อ</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-400">โทร: 02-123-4567</p>
+          <p class="text-sm leading-7 text-slate-400">อีเมล: support@royalsoundmart.com</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white">ช่องทาง</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-400">Facebook / Instagram / Line OA</p>
+          <p class="text-sm leading-7 text-slate-400">เปิดบริการทุกวัน 09:00 - 21:00 น.</p>
+        </div>
+      </div>
+
+      <div class="mx-auto flex w-full max-w-7xl flex-col gap-2 border-t border-white/10 px-4 py-5 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:px-6">
+        <span>© <span id="year"></span> Royal Sound Mart</span>
+        <span>Prototype for real ecommerce expansion</span>
       </div>
     </footer>
   </div>
 
-  <script>
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.carousel-item');
-    const dots = document.querySelectorAll('.dot');
+  <div id="drawer-backdrop" hidden class="fixed inset-0 z-50 bg-black/50 opacity-0 transition-opacity duration-200"></div>
 
-    function showSlide(n) {
-      const carousel = document.getElementById('carousel');
-      carousel.style.transform = `translateX(-${n * 100}%)`;
-      
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle('bg-beige-700', idx === n);
-        dot.classList.toggle('bg-beige-300', idx !== n);
-      });
-    }
+  <aside id="cart-drawer" aria-hidden="true" class="fixed inset-0 z-[60] flex justify-end bg-black/50 opacity-0 pointer-events-none transition-opacity duration-200">
+    <div class="flex h-full w-full max-w-md translate-x-full flex-col gap-4 border-l border-white/10 bg-slate-950 p-4 transition-transform duration-200">
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-amber-400">Cart</span>
+          <h2 class="mt-1 text-2xl font-extrabold tracking-tight text-white">รถเข็นสินค้า</h2>
+        </div>
+        <button id="cart-close" type="button" class="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10" aria-label="ปิดรถเข็น">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true"><path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3 1.4 1.4Z" /></svg>
+        </button>
+      </div>
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }
+      <div id="cart-items" class="flex-1 space-y-3 overflow-auto pr-1"></div>
 
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-    }
+      <div class="space-y-3 border-t border-white/10 pt-4">
+        <div class="flex items-baseline justify-between gap-4">
+          <span class="text-sm text-slate-400">ยอดรวม</span>
+          <strong id="cart-total" class="text-2xl font-extrabold text-white">฿0</strong>
+        </div>
+        <button type="button" class="inline-flex w-full items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-rose-500 px-5 py-3 text-sm font-bold text-white shadow-soft transition hover:-translate-y-0.5">ดำเนินการชำระเงิน</button>
+      </div>
+    </div>
+  </aside>
 
-    function currentSlide(n) {
-      currentIndex = n;
-      showSlide(currentIndex);
-    }
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
