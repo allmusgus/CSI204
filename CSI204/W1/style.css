@@ -1,0 +1,123 @@
+/* Beige e-commerce theme with enhanced UX/UI */
+:root{
+  --beige-50: #faf5f0;
+  --beige-100: #f5ede7;
+  --beige-200: #ede5de;
+  --beige-300: #d4c4b9;
+  --beige-400: #c4b0a0;
+  --beige-700: #9b8b7e;
+  --beige-800: #8b7b6e;
+  --beige-900: #6b5d52;
+}
+
+/* Base styles */
+html, body { height: 100%; }
+body { 
+  font-family: 'Prompt', sans-serif;
+  background-color: #faf5f0;
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Beige color utilities */
+.bg-beige-50 { background-color: #faf5f0; }
+.bg-beige-100 { background-color: #f5ede7; }
+.bg-beige-200 { background-color: #ede5de; }
+.bg-beige-300 { background-color: #d4c4b9; }
+.bg-beige-700 { background-color: #9b8b7e; }
+.bg-beige-800 { background-color: #8b7b6e; }
+.bg-beige-900 { background-color: #6b5d52; }
+
+.text-beige-50 { color: #faf5f0; }
+.text-beige-700 { color: #9b8b7e; }
+.text-beige-900 { color: #6b5d52; }
+
+.border-beige-200 { border-color: #ede5de; }
+.border-beige-300 { border-color: #d4c4b9; }
+.border-beige-700 { border-color: #9b8b7e; }
+.border-beige-800 { border-color: #8b7b6e; }
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.015em;
+}
+
+/* Carousel animations */
+.carousel-slide {
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-item {
+  transition: opacity 0.3s ease;
+}
+
+/* Image display */
+img { 
+  display: block;
+  width: 100%;
+}
+
+/* Button base styles */
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Navigation links */
+a {
+  transition: color 0.3s ease;
+}
+
+/* Dot indicator hover */
+.dot {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+}
+
+/* Product card improvements */
+article {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+article:hover {
+  transform: translateY(-4px);
+}
+
+/* Smooth box-shadow transitions */
+.shadow-md {
+  box-shadow: 0 4px 12px rgba(107, 93, 82, 0.12);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 28px rgba(107, 93, 82, 0.15);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #9b8b7e;
+  outline-offset: 2px;
+}
+
+/* Section spacing consistency */
+section {
+  position: relative;
+}
+
+/* Responsive text sizing */
+@media (max-width: 768px) {
+  h1 { letter-spacing: -0.01em; }
+  body { font-size: 14px; }
+}
+
