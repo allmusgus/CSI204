@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", displayUsers);
+
 document.getElementById("storageForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -6,14 +8,23 @@ document.getElementById("storageForm").addEventListener("submit", function(event
     let phone = document.getElementById("phone").value.trim();
     let password = document.getElementById("password").value;
 
-    // วัตถุข้อมูลที่จะบันทึก
-    let userData = { name: name, email: email, phone: phone, password: password };
+    if (name === "" || !email.includes("@") || phone.length !== 10 || password.length < 6) {
+        alert("ข้อมูลไม่ถูกต้อง กรุณาตรวจสอบ (ชื่อ, อีเมลที่มี @, เบอร์โทร 10 หลัก, รหัสผ่าน 6 ตัว)");
+        return;
+    }
+
+    let userData = {
+        name: name,
+        email: email,
+        phone: phone,
+        password: password
+    };
 
     saveToLocalStorage(userData);
-    this.reset(); // เคลียร์ช่องกรอกฟอร์มหลังจากบันทึกสำเร็จ
+    this.reset();
+    alert("Registration successful!");
 });
 
-// ฟังก์ชันบันทึกข้อมูลลง localStorage (อ้างอิงจากโค้ดหน้ารูปภาพ 6)
 function saveToLocalStorage(userData) {
     let users = JSON.parse(localStorage.getItem("users")) || [];
     users.push(userData);
@@ -21,44 +32,41 @@ function saveToLocalStorage(userData) {
     displayUsers();
 }
 
-// ฟังก์ชันดึงข้อมูลมาแสดงผลในรูปแบบตารางบนหน้าเว็บ
 function displayUsers() {
     let users = JSON.parse(localStorage.getItem("users")) || [];
     let userListDiv = document.getElementById("userList");
 
     if (users.length === 0) {
-        userListDiv.innerHTML = "<p>ไม่มีข้อมูลผู้ใช้งานที่บันทึกไว้</p>";
+        userListDiv.innerHTML = "<p class='text-gray-500'>ไม่มีข้อมูลในระบบ</p>";
         return;
     }
 
-    let html = `<table>
-                    <tr>
-                        <th>ลำดับ</th>
-                        <th>ชื่อ</th>
-                        <th>อีเมล</th>
-                        <th>เบอร์โทร</th>
-                    </tr>`;
-
+    let html = `<table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border p-2">ลำดับ</th>
+                            <th class="border p-2">ชื่อ</th>
+                            <th class="border p-2">อีเมล</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+    
     users.forEach((user, index) => {
         html += `<tr>
-                    <td>${index + 1}</td>
-                    <td>${user.name}</td>
-                    <td>${user.email}</td>
-                    <td>${user.phone}</td>
+                    <td class="border p-2">${index + 1}</td>
+                    <td class="border p-2">${user.name}</td>
+                    <td class="border p-2">${user.email}</td>
                  </tr>`;
     });
 
-    html += `</table>`;
+    html += `</tbody></table>`;
     userListDiv.innerHTML = html;
 }
 
-// ฟังก์ชันล้างข้อมูลใน localStorage
-function clearStorage() {
-    localStorage.removeItem("users");
-    displayUsers();
-    alert("Data cleared successfully");
-}
-
-// กำหนดปุ่ม Event และให้แสดงผลตารางทันทีเมื่อเปิดหน้าเว็บขึ้นมา
-document.getElementById("clearBtn").addEventListener("click", clearStorage);
-window.onload = displayUsers;
+document.getElementById("clearBtn").addEventListener("click", function clearStorage() {
+    if(confirm("ต้องการล้างข้อมูลทั้งหมดหรือไม่?")) {
+        localStorage.removeItem("users");
+        displayUsers();
+        alert("Data cleared successfully");
+    }
+});

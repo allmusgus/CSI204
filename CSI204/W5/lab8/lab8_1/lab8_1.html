@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 8.1 - Loop Amortization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4 text-blue-600">คำนวณสินเชื่อและตารางผ่อนชำระ</h1>
+        
+        <form id="loanForm" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div>
+                <label class="block mb-1">ยอดกู้ (บาท):</label>
+                <input type="text" id="loanAmount" class="w-full border p-2 rounded" required>
+            </div>
+            <div>
+                <label class="block mb-1">ดอกเบี้ย (% ต่อปี):</label>
+                <input type="number" step="0.01" id="interestRate" class="w-full border p-2 rounded" value="5" required>
+            </div>
+            <div>
+                <label class="block mb-1">ระยะเวลา (เดือน):</label>
+                <input type="number" id="months" class="w-full border p-2 rounded" value="12" required>
+            </div>
+            <div class="md:col-span-3">
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700">สร้างตารางผ่อนชำระ</button>
+            </div>
+        </form>
+
+        <div id="summary" class="bg-blue-50 p-4 rounded mb-4 hidden"></div>
+        
+        <div class="overflow-x-auto max-h-96">
+            <div id="amortizationTable"></div>
+        </div>
+    </div>
+    <script src="lab8_1.js"></script>
+</body>
+</html>

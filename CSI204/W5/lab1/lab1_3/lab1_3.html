@@ -1,136 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teerapat Niemsuwan - Computer Science Professional</title>
+    <title>Landing Page - My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="lab1_3.css">
 </head>
-<body>
-
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <h1 class="logo">Teerapat Niemsuwan</h1>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="hero">
-            <h2>Computer Science Student</h2>
-            <p>Interested in Web Development, Software Development, and Game Development</p>
-            <a href="#contact" class="cta-button">Let's Connect</a>
-        </div>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    
+    <header class="bg-blue-600 text-white text-center py-6 shadow">
+        <h1 class="text-3xl font-bold">Welcome to My Portfolio</h1>
     </header>
 
-    <main>
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="about-content">
-                    <div class="profile-image">
-                        <img src="profile.png" alt="Profile Picture">
-                    </div>
-                    <div class="about-text">
-                        <h2>About Me</h2>
-                        <p>I'm a Computer Science student currently studying at university. I'm learning web development, software engineering, and exploring game development. I enjoy solving problems with code and building interesting projects.</p>
-                        <ul class="info-list">
-                            <li><strong>Name:</strong> Teerapat Niemsuwan</li>
-                            <li><strong>Student ID:</strong> 67095474</li>
-                            <li><strong>Major:</strong> Computer Science</li>
-                            <li><strong>Location:</strong> Thailand</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section alternate">
-            <div class="container">
-                <h2>Core Competencies</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Frontend Development</h3>
-                        <p>HTML5, CSS3, JavaScript (ES6+), Responsive Design, UI/UX Principles</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Programming Languages</h3>
-                        <p>JavaScript, Python, Java, C++, SQL</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Web Technologies</h3>
-                        <p>Version Control (Git), RESTful APIs, Web Development Frameworks</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Software Development</h3>
-                        <p>Object-Oriented Design, Software Architecture, Problem Solving</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="container">
-                <h2>Featured Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">Web Development</div>
-                        <h3>Interactive Portfolio Website</h3>
-                        <p>Designed and developed a responsive portfolio website using HTML5, CSS3, and JavaScript with modern UI/UX principles.</p>
-                        <div class="tech-tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-header">Software Development</div>
-                        <h3>CSI204 Course Projects</h3>
-                        <p>Completed multiple software development projects demonstrating proficiency in programming fundamentals and best practices.</p>
-                        <div class="tech-tags">
-                            <span class="tag">Multiple Languages</span>
-                            <span class="tag">Problem Solving</span>
-                            <span class="tag">Best Practices</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section alternate">
-            <div class="container">
-                <h2>Let's Connect</h2>
-                <div class="contact-content">
-                    <p>Feel free to reach out to me if you'd like to chat about coding, projects, or anything tech-related!</p>
-                    <div class="contact-methods">
-                        <a href="mailto:contact@example.com" class="contact-link">
-                            <strong>Email:</strong> contact@example.com
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" class="contact-link">
-                            <strong>LinkedIn:</strong> linkedin.com/in/teerapat-niemsuwan
-                        </a>
-                        <a href="https://github.com" target="_blank" class="contact-link">
-                            <strong>GitHub:</strong> github.com/teerapat-niemsuwan
-                        </a>
-                    </div>
-                    <a href="mailto:contact@example.com" class="cta-button">Send Me an Email</a>
-                </div>
-            </div>
+    <main class="content flex-grow container mx-auto px-4 py-8 max-w-2xl">
+        <section class="bg-white p-6 rounded shadow text-center">
+            <h2 class="text-2xl font-semibold border-b pb-2 mb-4">About Me</h2>
+            
+            <img src="profile.png" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-200">
+            
+            <p class="text-lg mb-2"><strong>Name:</strong>Teerapat Niemsuwan</p>
+            <p class="text-lg text-gray-600"><strong>Student ID:</strong> 67095474</p>
+            <p class="text-lg text-gray-600"><strong>Email:</strong> teerapat.nie@spumail.net</p>
+            <p class="text-lg text-gray-600"><strong>Major:</strong> Computer Science</p>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Teerapat Niemsuwan. All rights reserved.</p>
-            <p>Designed and built with HTML, CSS/p>
-        </div>
+    <footer class="bg-gray-800 text-white text-center py-4 mt-auto">
+        <p>&copy; 2026 CSI204 | Software Development Digital Platform</p>
     </footer>
 
 </body>

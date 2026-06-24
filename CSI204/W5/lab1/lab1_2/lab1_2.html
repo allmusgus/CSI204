@@ -4,20 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 1.2 - Pseudocode</title>
-    <style>
-        pre {
-            background-color: #f4f4f4;
-            padding: 15px;
-            border-left: 5px solid #007bff;
-            font-family: 'Courier New', Courier, monospace;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Lab 1.2: Pseudocode การทำงาน</h1>
-
-    <h3>1. Pseudocode คำนวณพื้นที่วงกลม</h3>
-    <pre>
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4 text-blue-600">Lab 1.2: Pseudocode</h1>
+        
+        <h2 class="text-lg font-semibold mt-4 mb-2">1. คำนวณพื้นที่วงกลม</h2>
+        <pre class="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto">
 BEGIN
     INPUT radius
     SET PI = 3.14159
@@ -25,25 +19,33 @@ BEGIN
     OUTPUT "Area of the circle is: " + area
 END</pre>
 
-    <h3>2. Pseudocode คำนวณเกรด (0-100)</h3>
-    <pre>
+        <h2 class="text-lg font-semibold mt-4 mb-2">2. คำนวณเกรด</h2>
+        <pre class="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto">
 BEGIN
     INPUT score
-    IF score >= 80 THEN OUTPUT "A"
-    ELSE IF score >= 70 THEN OUTPUT "B"
-    ELSE IF score >= 60 THEN OUTPUT "C"
-    ELSE IF score >= 50 THEN OUTPUT "D"
-    ELSE OUTPUT "F"
+    IF score >= 80 THEN
+        OUTPUT "A"
+    ELSE IF score >= 70 THEN
+        OUTPUT "B"
+    ELSE IF score >= 60 THEN
+        OUTPUT "C"
+    ELSE IF score >= 50 THEN
+        OUTPUT "D"
+    ELSE
+        OUTPUT "F"
 END</pre>
 
-    <h3>3. Pseudocode หาค่าสูงสุดใน 3 จำนวน</h3>
-    <pre>
+        <h2 class="text-lg font-semibold mt-4 mb-2">3. หาค่าสูงสุดใน 3 จำนวน</h2>
+        <pre class="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto">
 BEGIN
-    INPUT num1, num2, num3
-    SET max = num1
-    IF num2 > max THEN max = num2
-    IF num3 > max THEN max = num3
-    OUTPUT "Maximum value is: " + max
+    INPUT a, b, c
+    SET max = a
+    IF b > max THEN
+        SET max = b
+    IF c > max THEN
+        SET max = c
+    OUTPUT "Max value is: " + max
 END</pre>
+    </div>
 </body>
 </html>

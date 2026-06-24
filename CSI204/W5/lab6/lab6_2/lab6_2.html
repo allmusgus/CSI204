@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 6.2 - Filter Data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4 text-orange-600">รายการสินค้า</h1>
+        
+        <div class="mb-4">
+            <label class="font-bold mr-2">หมวดหมู่:</label>
+            <select id="categoryFilter" class="border p-2 rounded w-1/2">
+                <option value="ทั้งหมด">ทั้งหมด</option>
+                <option value="เสื้อผ้า">เสื้อผ้า</option>
+                <option value="อุปกรณ์">อุปกรณ์</option>
+                <option value="อาหาร">อาหาร</option>
+            </select>
+        </div>
+
+        <table class="w-full text-left border-collapse border">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="border p-2">ชื่อสินค้า</th>
+                    <th class="border p-2">หมวดหมู่</th>
+                    <th class="border p-2">ราคา (บาท)</th>
+                    <th class="border p-2">สต็อก</th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody">
+                </tbody>
+        </table>
+    </div>
+    <script src="lab6_2.js"></script>
+</body>
+</html>

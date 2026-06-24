@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Mortgage Calculator - ลดต้นลดดอกของจริง</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 p-4 md:p-8 font-sans text-slate-800">
+    <div class="max-w-6xl mx-auto bg-white p-6 rounded-xl shadow-xl">
+        <h1 class="text-3xl font-extrabold mb-2 text-center text-indigo-700">ระบบคำนวณสินเชื่อบ้านแบบลดต้นลดดอก</h1>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <div class="lg:col-span-1 space-y-6">
+                <form id="mortgageForm" class="bg-indigo-50 p-5 rounded-lg border border-indigo-100 shadow-sm space-y-4">
+                    <h2 class="font-bold text-lg text-indigo-800 border-b border-indigo-200 pb-2">ข้อมูลสินเชื่อเบื้องต้น</h2>
+                    <div>
+                        <label class="block font-semibold mb-1 text-sm">ราคาบ้าน (บาท):</label>
+                        <input type="text" id="housePrice" class="w-full border p-2 rounded focus:ring-2 focus:ring-indigo-400 focus:outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-1 text-sm">เงินดาวน์ (บาท):</label>
+                        <input type="text" id="downPayment" class="w-full border p-2 rounded focus:ring-2 focus:ring-indigo-400 focus:outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-1 text-sm">ดอกเบี้ย 3 ปีแรก (% ต่อปี):</label>
+                        <input type="number" step="0.01" id="interestRate" class="w-full border p-2 rounded focus:ring-2 focus:ring-indigo-400 focus:outline-none" value="3.50" required>
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-1 text-sm">ระยะเวลาผ่อน (ปี):</label>
+                        <select id="loanYears" class="w-full border p-2 rounded focus:ring-2 focus:ring-indigo-400 focus:outline-none">
+                            <option value="10">10 ปี</option>
+                            <option value="20">20 ปี</option>
+                            <option value="30" selected>30 ปี</option>
+                            <option value="40">40 ปี</option>
+                        </select>
+                    </div>
+
+                    <h2 class="font-bold text-lg text-indigo-800 border-b border-indigo-200 pb-2 mt-6">แผนรีไฟแนนซ์ (Refinance)</h2>
+                    <div class="flex items-center gap-2 mb-2">
+                        <input type="checkbox" id="useRefinance" class="w-4 h-4 text-indigo-600 rounded">
+                        <label for="useRefinance" class="font-semibold text-sm cursor-pointer">รีไฟแนนซ์เมื่อครบ 3 ปี</label>
+                    </div>
+                    <div id="refinanceOptions" class="opacity-50 pointer-events-none transition-opacity">
+                        <label class="block font-semibold mb-1 text-sm">ดอกเบี้ยใหม่ตั้งแต่ปีที่ 4 (%):</label>
+                        <input type="number" step="0.01" id="newInterestRate" class="w-full border p-2 rounded" value="3.00">
+                        <p class="text-xs text-slate-500 mt-1">* หากไม่รีไฟแนนซ์ ดอกเบี้ยลอยตัวมักจะพุ่งไปที่ 6-7%</p>
+                    </div>
+
+                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg mt-4 hover:bg-indigo-700 transition shadow-md">
+                        คำนวณตารางใหม่
+                    </button>
+                </form>
+            </div>
+
+            <div class="lg:col-span-3 hidden" id="resultContainer">
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-white border-l-4 border-blue-500 p-4 rounded shadow-sm">
+                        <p class="text-xs text-slate-500 font-bold uppercase">วงเงินกู้สุทธิ</p>
+                        <p class="font-extrabold text-xl text-slate-800 mt-1" id="resLoanAmount"></p>
+                    </div>
+                    <div class="bg-white border-l-4 border-indigo-500 p-4 rounded shadow-sm">
+                        <p class="text-xs text-slate-500 font-bold uppercase">ค่างวด/เดือน (ปกติ)</p>
+                        <p class="font-extrabold text-xl text-slate-800 mt-1" id="resMonthlyPayment"></p>
+                    </div>
+                    <div class="bg-white border-l-4 border-rose-500 p-4 rounded shadow-sm">
+                        <p class="text-xs text-slate-500 font-bold uppercase">ดอกเบี้ยรวมทั้งหมด</p>
+                        <p class="font-extrabold text-xl text-rose-600 mt-1" id="resTotalInterest"></p>
+                    </div>
+                    <div class="bg-white border-l-4 border-emerald-500 p-4 rounded shadow-sm">
+                        <p class="text-xs text-slate-500 font-bold uppercase">ใช้เวลาผ่อนจริง</p>
+                        <p class="font-extrabold text-xl text-emerald-600 mt-1" id="resActualMonths"></p>
+                    </div>
+                </div>
+
+                <div id="savingBadge" class="mb-6 bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-lg flex items-center gap-4 hidden">
+                    <div class="text-3xl">🎉</div>
+                    <div>
+                        <p class="font-bold text-lg">แผนนี้ยอดเยี่ยมมาก!</p>
+                        <p id="savingText" class="text-sm"></p>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-end mb-2">
+                    <div>
+                        <h3 class="font-bold text-xl text-slate-800">ตารางผ่อนชำระ</h3>
+                        <p class="text-sm text-slate-500">คุณสามารถกรอกตัวเลขในช่อง <span class="text-emerald-600 font-bold">"โปะเพิ่ม (บาท)"</span> เพื่อดูยอดที่ลดลงได้ทันที</p>
+                    </div>
+                    <button id="clearExtraBtn" class="text-sm bg-slate-200 hover:bg-slate-300 px-3 py-1 rounded font-semibold transition">ล้างยอดโปะทั้งหมด</button>
+                </div>
+
+                <div class="overflow-y-auto max-h-[600px] border rounded-lg shadow-inner relative bg-white">
+                    <table class="w-full text-right border-collapse text-sm">
+                        <thead class="bg-slate-800 text-white sticky top-0 z-10 shadow">
+                            <tr>
+                                <th class="p-3 text-center w-16">งวดที่</th>
+                                <th class="p-3">อัตราดอกเบี้ย</th>
+                                <th class="p-3">ค่างวด (ดึงจากบัญชี)</th>
+                                <th class="p-3 text-rose-300">ดอกเบี้ย</th>
+                                <th class="p-3 text-blue-300">หักเงินต้น</th>
+                                <th class="p-3 bg-emerald-700 text-emerald-100 w-36">โปะเพิ่ม (บาท)</th>
+                                <th class="p-3">ยอดคงเหลือ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mortgageTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="house_loan_calculator.js"></script>
+</body>
+</html>

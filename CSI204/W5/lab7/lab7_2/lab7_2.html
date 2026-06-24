@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 7.2 - JSON & Export</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4 text-indigo-600">ระบบคลังสินค้า (JSON)</h1>
+        
+        <div class="flex gap-4 mb-6">
+            <button id="exportBtn" class="bg-indigo-600 text-white px-4 py-2 rounded font-bold hover:bg-indigo-700">Export ข้อมูล (JSON)</button>
+            <div class="border p-2 rounded flex-grow">
+                <label class="block text-sm text-gray-600 mb-1">Import ข้อมูล (อัปโหลดไฟล์ JSON):</label>
+                <input type="file" id="importFile" accept=".json" class="w-full">
+            </div>
+        </div>
+
+        <h2 class="font-bold text-lg mb-2">มูลค่าสินค้ารวมทั้งหมด: <span id="totalValue" class="text-red-500">0</span> บาท</h2>
+        
+        <table class="w-full text-left border-collapse border mt-4">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="border p-2">รหัส</th>
+                    <th class="border p-2">ชื่อสินค้า</th>
+                    <th class="border p-2">ราคา/ชิ้น</th>
+                </tr>
+            </thead>
+            <tbody id="jsonTableBody"></tbody>
+        </table>
+    </div>
+    <script src="lab7_2.js"></script>
+</body>
+</html>

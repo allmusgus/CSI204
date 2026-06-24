@@ -3,42 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 1.5 - LocalStorage Management</title>
-    <style>
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; }
-        input { padding: 8px; width: 250px; }
-        button { padding: 8px 15px; margin-right: 5px; cursor: pointer; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-    </style>
+    <title>Lab 1.5 - LocalStorage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>ระบบบันทึกข้อมูลผู้ใช้งาน (LocalStorage)</h1>
-    <form id="storageForm">
-        <div class="form-group">
-            <label for="name">ชื่อ:</label>
-            <input type="text" id="name" required>
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="bg-white p-6 rounded shadow">
+            <h1 class="text-2xl font-bold mb-4 text-blue-600">ลงทะเบียนผู้ใช้</h1>
+            <form id="storageForm" class="space-y-4">
+                <div><label class="block">ชื่อ:</label><input type="text" id="name" class="w-full border p-2 rounded"></div>
+                <div><label class="block">อีเมล:</label><input type="text" id="email" class="w-full border p-2 rounded"></div>
+                <div><label class="block">เบอร์โทร:</label><input type="text" id="phone" class="w-full border p-2 rounded"></div>
+                <div><label class="block">รหัสผ่าน:</label><input type="password" id="password" class="w-full border p-2 rounded"></div>
+                <button type="submit" class="w-full bg-green-600 text-white font-bold py-2 rounded hover:bg-green-700">บันทึกข้อมูล</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="email">อีเมล:</label>
-            <input type="email" id="email" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">เบอร์โทร:</label>
-            <input type="text" id="phone" required>
-        </div>
-        <div class="form-group">
-            <label for="password">รหัสผ่าน:</label>
-            <input type="password" id="password" required>
-        </div>
-        <button type="submit" style="background-color: green; color: white;">บันทึกข้อมูล</button>
-        <button type="button" id="clearBtn" style="background-color: red; color: white;">ล้างข้อมูลทั้งหมด</button>
-    </form>
 
-    <h2>รายชื่อผู้ใช้ที่ลงทะเบียน</h2>
-    <div id="userList"></div>
+        <div class="bg-white p-6 rounded shadow">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">รายชื่อที่บันทึก (LocalStorage)</h2>
+            <div id="userList" class="overflow-x-auto mb-4">
+                </div>
+            <button id="clearBtn" class="w-full bg-red-600 text-white font-bold py-2 rounded hover:bg-red-700">ล้างข้อมูลทั้งหมด</button>
+        </div>
+
+    </div>
 
     <script src="lab1_5.js"></script>
 </body>

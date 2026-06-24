@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 6.1 - Unit Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-md mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4 text-green-600">ระบบแปลงหน่วย</h1>
+        
+        <div class="space-y-4">
+            <div>
+                <label class="block mb-1">เลือกประเภทการแปลง:</label>
+                <select id="convertType" class="w-full border p-2 rounded">
+                    <option value="kgToLb">กิโลกรัม เป็น ปอนด์</option>
+                    <option value="cToF">เซลเซียส เป็น ฟาเรนไฮต์</option>
+                    <option value="kmToMi">กิโลเมตร เป็น ไมล์</option>
+                </select>
+            </div>
+            <div>
+                <label class="block mb-1">ค่าที่ต้องการแปลง:</label>
+                <input type="number" id="inputValue" step="0.01" class="w-full border p-2 rounded" placeholder="กรอกตัวเลข">
+            </div>
+            
+            <button onclick="convert()" class="w-full bg-green-600 text-white font-bold py-2 rounded hover:bg-green-700">แปลงค่า</button>
+        </div>
+
+        <div id="result" class="mt-6 text-center text-lg font-bold p-4 bg-green-50 rounded hidden"></div>
+    </div>
+    <script src="lab6_1.js"></script>
+</body>
+</html>

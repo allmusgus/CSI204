@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 5.2 - Dropdown Shipping</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-md mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4 text-purple-600">คำนวณค่าจัดส่ง</h1>
+        
+        <div class="space-y-4">
+            <div>
+                <label class="block mb-1 text-gray-700">ราคาสินค้ารวม (บาท):</label>
+                <input type="text" id="productTotal" class="w-full border p-2 rounded" placeholder="กรอกราคาสินค้า">
+            </div>
+            
+            <div>
+                <label class="block mb-1 text-gray-700">รูปแบบการจัดส่ง:</label>
+                <select id="shippingType" class="w-full border p-2 rounded">
+                    <option value="50">EMS (50 บาท)</option>
+                    <option value="30">ลงทะเบียน (30 บาท)</option>
+                    <option value="15">ธรรมดา (15 บาท)</option>
+                </select>
+            </div>
+            
+            <button id="calcShippingBtn" class="w-full bg-purple-600 text-white font-bold py-2 rounded hover:bg-purple-700">สรุปยอดชำระ</button>
+        </div>
+
+        <div id="shippingResult" class="mt-6 bg-purple-50 p-4 rounded hidden"></div>
+    </div>
+    <script src="lab5_2.js"></script>
+</body>
+</html>

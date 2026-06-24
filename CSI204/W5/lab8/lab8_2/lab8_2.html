@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 8.2 - Loops & VAT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4 text-purple-600">สรุปยอดขายสินค้า (Loops Comparison)</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div>
+                <h2 class="font-bold mb-2 bg-purple-100 p-2 text-center rounded">สร้างจาก For Loop</h2>
+                <table class="w-full text-left border-collapse border text-sm">
+                    <thead class="bg-gray-200"><tr><th class="border p-2">ชื่อ</th><th class="border p-2">รวม (บาท)</th></tr></thead>
+                    <tbody id="forLoopTable"></tbody>
+                </table>
+            </div>
+
+            <div>
+                <h2 class="font-bold mb-2 bg-blue-100 p-2 text-center rounded">สร้างจาก While Loop</h2>
+                <table class="w-full text-left border-collapse border text-sm">
+                    <thead class="bg-gray-200"><tr><th class="border p-2">ชื่อ</th><th class="border p-2">รวม (บาท)</th></tr></thead>
+                    <tbody id="whileLoopTable"></tbody>
+                </table>
+            </div>
+
+            <div>
+                <h2 class="font-bold mb-2 bg-green-100 p-2 text-center rounded">สร้างจาก Do-While Loop</h2>
+                <table class="w-full text-left border-collapse border text-sm">
+                    <thead class="bg-gray-200"><tr><th class="border p-2">ชื่อ</th><th class="border p-2">รวม (บาท)</th></tr></thead>
+                    <tbody id="doWhileLoopTable"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="grandSummary" class="bg-gray-800 text-white p-6 rounded text-lg leading-loose"></div>
+    </div>
+    <script src="lab8_2.js"></script>
+</body>
+</html>
