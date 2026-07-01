@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CSI204 Web Programming - แหล่งรวมผลงาน Workshop และ Lab ทั้งหมดที่พัฒนาขึ้นในรายวิชา">
+    <title>CSI204 Web Programming | Workshop Hub</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Prompt & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'Prompt', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow-indigo': '0 0 25px rgba(99, 102, 241, 0.15)',
+                        'glow-purple': '0 0 25px rgba(168, 85, 247, 0.15)',
+                        'glow-emerald': '0 0 25px rgba(16, 185, 129, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #030712;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.12) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.06) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(51, 65, 85, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.35);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+        }
+
+        .text-glow-indigo {
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+        }
+    </style>
+</head>
+
+<body class="text-slate-200 min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+    <!-- Header Section -->
+    <header class="relative overflow-hidden py-16 md:py-20 border-b border-slate-900">
+        <!-- Background Accents -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+            <!-- Badge -->
+            <div
+                class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs text-indigo-400 font-medium tracking-wider uppercase mb-6 shadow-inner">
+                <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                <span>CSI204 Web Programming</span>
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
+                <span
+                    class="bg-gradient-to-r from-slate-100 via-indigo-200 to-purple-300 bg-clip-text text-transparent">
+                    Workshop & Lab Hub
+                </span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-slate-400 max-w-xl text-base md:text-lg font-light leading-relaxed">
+                หน้าหลักรวบรวมผลงานการเรียนรู้ การเขียนโปรแกรมฝั่ง Front-end ตลอดภาคการศึกษา
+                พัฒนาด้วยเทคโนโลยีเว็บสมัยใหม่
+            </p>
+        </div>
+    </header>
+    <!-- Main Dashboard Grid -->
+    <main class="max-w-6xl w-full mx-auto px-6 py-12 flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+            <!-- Left Column: Workshop 1, 2, and 5+ (Span 5) -->
+            <div class="lg:col-span-5 space-y-8">
+
+                <!-- Workshop 1 Card -->
+                <article class="glass-card rounded-2xl p-6 relative overflow-hidden group">
+                    <!-- Ambient Light -->
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all duration-300 pointer-events-none">
+                    </div>
+
+                    <div class="flex items-start justify-between mb-4">
+                        <span
+                            class="text-xs font-semibold text-indigo-400 uppercase tracking-widest bg-indigo-950/50 border border-indigo-900/50 px-2.5 py-1 rounded-md">
+                            Workshop 1
+                        </span>
+                        <div class="flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            Completed
+                        </div>
+                    </div>
+
+                    <h2 class="text-xl font-bold mb-2 text-slate-100 group-hover:text-indigo-300 transition-colors">
+                        Royal Sound Mart
+                    </h2>
+
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed font-light">
+                        ร้านเครื่องดนตรีออนไลน์และอุปกรณ์สตูดิโอ พัฒนาด้วย Tailwind CSS ดีไซน์หรูหรา รองรับ Responsive
+                        และใช้งาน Google Fonts
+                    </p>
+
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-800/60">
+                        <span class="text-xs text-slate-500 flex items-center gap-1">
+                            <i data-lucide="tag" class="w-3.5 h-3.5"></i>
+                            Tailwind CSS, Responsive
+                        </span>
+                        <a href="./W1/index.html" id="link-w1"
+                            class="inline-flex items-center gap-1.5 text-sm text-indigo-400 hover:text-indigo-300 font-medium group/btn">
+                            เข้าชมผลงาน
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+                <!-- Workshop 2 Card -->
+                <article class="glass-card rounded-2xl p-6 relative overflow-hidden group">
+                    <!-- Ambient Light -->
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-300 pointer-events-none">
+                    </div>
+
+                    <div class="flex items-start justify-between mb-4">
+                        <span
+                            class="text-xs font-semibold text-purple-400 uppercase tracking-widest bg-purple-950/50 border border-purple-900/50 px-2.5 py-1 rounded-md">
+                            Workshop 2
+                        </span>
+                        <div class="flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                            Completed
+                        </div>
+                    </div>
+
+                    <h2 class="text-xl font-bold mb-2 text-slate-100 group-hover:text-purple-300 transition-colors">
+                        Git & GitHub Guide
+                    </h2>
+
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed font-light">
+                        เอกสารและคู่มือการสร้างบัญชี GitHub และการติดตั้งใช้งาน Git ร่วมกับ Visual Studio Code
+                        สำหรับควบคุมเวอร์ชันของโค้ด
+                    </p>
+
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-800/60">
+                        <span class="text-xs text-slate-500 flex items-center gap-1">
+                            <i data-lucide="tag" class="w-3.5 h-3.5"></i>
+                            Basic HTML, Git Setup
+                        </span>
+                        <a href="./W2/index.html" id="link-w2"
+                            class="inline-flex items-center gap-1.5 text-sm text-purple-400 hover:text-purple-300 font-medium group/btn">
+                            เข้าชมผลงาน
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+                <!-- Workshop 5+ Card -->
+                <article
+                    class="glass-card rounded-2xl p-6 relative overflow-hidden group border-indigo-900/40 shadow-glow-indigo">
+                    <!-- Ambient Light -->
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-pink-500/10 rounded-full blur-2xl group-hover:bg-pink-500/20 transition-all duration-300 pointer-events-none">
+                    </div>
+
+                    <div class="flex items-start justify-between mb-4">
+                        <span
+                            class="text-xs font-semibold text-pink-400 uppercase tracking-widest bg-pink-950/50 border border-pink-900/50 px-2.5 py-1 rounded-md">
+                            Workshop 5+
+                        </span>
+                        <div class="flex items-center gap-1.5 text-xs text-amber-400 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                            Special Lab
+                        </div>
+                    </div>
+
+                    <h2
+                        class="text-xl font-bold mb-2 text-slate-100 group-hover:text-pink-300 transition-colors flex items-center gap-2">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-pink-400"></i>
+                        House Loan Calculator
+                    </h2>
+
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed font-light">
+                        แอปพลิเคชันเครื่องคำนวณเงินกู้ซื้อบ้าน (Lab 9) คำนวณอัตราดอกเบี้ย ระยะเวลา วงเงิน
+                        และวิเคราะห์การผ่อนชำระพร้อมสรุปข้อมูล
+                    </p>
+
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-800/60">
+                        <span class="text-xs text-slate-500 flex items-center gap-1">
+                            <i data-lucide="tag" class="w-3.5 h-3.5"></i>
+                            Financial Calcs, JS App
+                        </span>
+                        <a href="./W5+/lab9/house_loan_calculator.html" id="link-w5plus"
+                            class="inline-flex items-center gap-1.5 text-sm text-pink-400 hover:text-pink-300 font-medium group/btn">
+                            เข้าใช้งานแอป
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <!-- Right Column: Workshop 5 Interactive Console (Span 7) -->
+            <section class="lg:col-span-7 glass-card rounded-3xl p-6 md:p-8 relative overflow-hidden">
+                <!-- Accent Glow -->
+                <div
+                    class="absolute -top-12 -left-12 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <div
+                    class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
+                    <div>
+                        <div class="flex items-center gap-2.5 mb-2">
+                            <span
+                                class="text-xs font-semibold text-emerald-400 uppercase tracking-widest bg-emerald-950/50 border border-emerald-900/50 px-2.5 py-1 rounded-md">
+                                Workshop 5
+                            </span>
+                            <span class="text-xs text-slate-400">18 Exercises</span>
+                        </div>
+                        <h2 class="text-2xl font-extrabold text-slate-100">JavaScript Programming & DOM</h2>
+                    </div>
+
+                    <div class="flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Multi-Lab Ready
+                    </div>
+                </div>
+                <p class="text-slate-400 text-sm mb-6 leading-relaxed font-light">
+                    แบบฝึกหัดทบทวนคำสั่งควบคุม โครงสร้างข้อมูล และการทำงานกับ Document Object Model (DOM) บนเบราว์เซอร์
+                </p>
+                <!-- Lab Selector Tabs -->
+                <div class="mb-6">
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2.5">
+                        เลือกหัวข้อห้องปฏิบัติการ (Lab)
+                    </label>
+                    <div class="flex flex-wrap gap-2" id="tab-container">
+                        <!-- Tabs generated dynamically -->
+                        <button onclick="switchLab('lab1')" id="btn-lab1"
+                            class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-indigo-600 text-white shadow-glow-indigo">
+                            Lab 1
+                        </button>
+                        <button onclick="switchLab('lab3')" id="btn-lab3"
+                            class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200">
+                            Lab 3
+                        </button>
+                        <button onclick="switchLab('lab4')" id="btn-lab4"
+                            class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200">
+                            Lab 4
+                        </button>
+                        <button onclick="switchLab('lab5')" id="btn-lab5"
+                            class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200">
+                            Lab 5
+                        </button>
+                        <button onclick="switchLab('lab6')" id="btn-lab6"
+                            class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200">
+                            Lab 6
+                        </button>
+                        <button onclick="switchLab('lab7')" id="btn-lab7"
+                            class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200">
+                            Lab 7
+                        </button>
+                        <button onclick="switchLab('lab8')" id="btn-lab8"
+                            class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200">
+                            Lab 8
+                        </button>
+                    </div>
+                </div>
+                <!-- Exercises List Panel -->
+                <div
+                    class="bg-slate-950/60 rounded-2xl border border-slate-900 p-4 md:p-6 min-h-[320px] flex flex-col justify-between">
+
+                    <!-- Exercises Container -->
+                    <div id="exercises-list" class="space-y-3.5">
+                        <!-- Dynamically Loaded Exercises based on selected Lab -->
+                    </div>
+
+                    <!-- Bottom Info / Note -->
+                    <div
+                        class="mt-6 pt-4 border-t border-slate-900 flex items-center justify-between text-xs text-slate-500">
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="info" class="w-3.5 h-3.5 text-indigo-400"></i>
+                            <span id="lab-desc">หัวข้อ: JavaScript Language Foundations</span>
+                        </span>
+                        <span
+                            class="font-mono text-[10px] bg-slate-900/80 px-2 py-0.5 rounded border border-slate-800/40 text-slate-400">W5/lab_xx/</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Footer Section -->
+    <footer class="mt-auto py-8 border-t border-slate-900 text-center text-xs text-slate-500 relative">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>© 2026 CSI204 Web Programming Coursework. All Rights Reserved.</p>
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-indigo-500"></span>
+                <span class="text-slate-400">พัฒนาโดยนักศึกษา</span>
+            </div>
+        </div>
+    </footer>
+    <!-- Script to Handle Dynamic Lab Switching -->
+    <script>
+        // Exercises Database
+        const labsData = {
+            lab1: {
+                title: "Lab 1: JavaScript Language Foundations",
+                description: "เรียนรู้คำสั่งพื้นฐาน ชนิดข้อมูล ตัวแปร ตัวดำเนินการ และการเปรียบเทียบใน JavaScript",
+                exercises: [
+                    {
+                        id: "w5-lab1-1",
+                        num: "1.1",
+                        title: "Basic Variables & console.log",
+                        desc: "การประกาศตัวแปรเบื้องต้นและแสดงผลผ่านคอนโซล",
+                        path: "./W5/lab1/lab1_1/lab1_1.html"
+                    },
+                    {
+                        id: "w5-lab1-2",
+                        num: "1.2",
+                        title: "Conditional (if/else)",
+                        desc: "ทดลองสร้างเงื่อนไขตรวจสอบค่าตัวแปรและดำเนินการเงื่อนไขสองทางเลือก",
+                        path: "./W5/lab1/lab1_2/lab1_2.html"
+                    },
+                    {
+                        id: "w5-lab1-3",
+                        num: "1.3",
+                        title: "Switch Case Statement",
+                        desc: "สร้างโครงสร้างการเลือกทำหลายทิศทางตามค่าของเงื่อนไขเดี่ยว",
+                        path: "./W5/lab1/lab1_3/lab1_3.html"
+                    },
+                    {
+                        id: "w5-lab1-4",
+                        num: "1.4",
+                        title: "For Loops & Counter",
+                        desc: "สร้างลูปทำซ้ำแบบกำหนดจำนวนรอบและควบคุมลำดับขั้นการทำงาน",
+                        path: "./W5/lab1/lab1_4/lab1_4.html"
+                    },
+                    {
+                        id: "w5-lab1-5",
+                        num: "1.5",
+                        title: "While Loop Fundamentals",
+                        desc: "สร้างเงื่อนไขวนซ้ำจนกว่าเงื่อนไขที่กำหนดจะเป็นเท็จ",
+                        path: "./W5/lab1/lab1_5/lab1_5.html"
+                    }
+                ]
+            },
+            lab3: {
+                title: "Lab 3: JavaScript DOM Selection",
+                description: "การเข้าถึง ดึงข้อมูล และเลือกตำแหน่ง Element ต่างๆ ภายในเว็บเพจ",
+                exercises: [
+                    {
+                        id: "w5-lab3-1",
+                        num: "3.1",
+                        title: "getElementById & InnerHTML",
+                        desc: "ดึงและปรับแต่งเนื้อหาใน Element ที่มี ID เฉพาะเจาะจง",
+                        path: "./W5/lab3/lab3_1/lab3_1.html"
+                    },
+                    {
+                        id: "w5-lab3-2",
+                        num: "3.2",
+                        title: "getElementsByClassName",
+                        desc: "เลือกและวนลูปจัดการกลุ่มของ Elements ที่ใช้ Class ร่วมกัน",
+                        path: "./W5/lab3/lab3_2/lab3_2.html"
+                    },
+                    {
+                        id: "w5-lab3-3",
+                        num: "3.3",
+                        title: "querySelectorAll Usage",
+                        desc: "เลือกออบเจกต์ด้วยรูปแบบ CSS Selectors ที่หลากหลาย",
+                        path: "./W5/lab3/lab3_3/lab3_3.html"
+                    }
+                ]
+            },
+            lab4: {
+                title: "Lab 4: Advanced DOM & Events",
+                description: "การดักฟังเหตุการณ์จากผู้ใช้ การประมวลผลฟอร์ม และเพิ่มรายการในแบบ Dynamic",
+                exercises: [
+                    {
+                        id: "w5-lab4-1a",
+                        num: "4.1a",
+                        title: "Form Inputs Handling",
+                        desc: "เข้าถึงค่าที่ผู้ใช้กรอกผ่านฟิลด์ฟอร์มประเภทต่างๆ",
+                        path: "./W5/lab4/lab4_1/lab4_1a.html"
+                    },
+                    {
+                        id: "w5-lab4-1b",
+                        num: "4.1b",
+                        title: "Interactive Form Submission",
+                        desc: "การควบคุมอีเวนต์ submit และตรวจสอบข้อมูลเริ่มต้นก่อนส่งค่า",
+                        path: "./W5/lab4/lab4_1/lab4_1b.html"
+                    },
+                    {
+                        id: "w5-lab4-2a",
+                        num: "4.2a",
+                        title: "CreateElement & Append",
+                        desc: "การสร้าง HTML Node ใหม่ด้วยสคริปต์และต่อขยายเข้าไปในโครงสร้าง DOM",
+                        path: "./W5/lab4/lab4_2/lab4_2a.html"
+                    },
+                    {
+                        id: "w5-lab4-2b",
+                        num: "4.2b",
+                        title: "Dynamic Element Management",
+                        desc: "การลบ แก้ไข หรืออัปเดตองค์ประกอบของหน้าเว็บตามคำสั่งผู้ใช้",
+                        path: "./W5/lab4/lab4_2/lab4_2b.html"
+                    }
+                ]
+            },
+            lab5: {
+                title: "Lab 5: Objects & JSON Data",
+                description: "การเขียนโครงสร้างข้อมูลแบบ Object ของ JavaScript และเรียนรู้พื้นฐานรูปแบบ JSON",
+                exercises: [
+                    {
+                        id: "w5-lab5-1",
+                        num: "5.1",
+                        title: "JS Object Definition",
+                        desc: "การสร้างและกำหนดคุณสมบัติ (Properties) รวมถึงเมธอดให้กับออบเจกต์",
+                        path: "./W5/lab5/lab5_1/lab5_1.html"
+                    },
+                    {
+                        id: "w5-lab5-2",
+                        num: "5.2",
+                        title: "JSON Stringify & Parse",
+                        desc: "แปลงออบเจกต์เป็นข้อความสตริงแบบ JSON และแปลงข้อความกลับมาเป็นออบเจกต์",
+                        path: "./W5/lab5/lab5_2/lab5_2.html"
+                    }
+                ]
+            },
+            lab6: {
+                title: "Lab 6: Web Storage (LocalStorage)",
+                description: "การบันทึกข้อมูลและดึงข้อมูลมาใช้งานจากหน่วยความจำบนเบราว์เซอร์ให้คงอยู่ข้ามเซสชัน",
+                exercises: [
+                    {
+                        id: "w5-lab6-1",
+                        num: "6.1",
+                        title: "Set & Get LocalStorage",
+                        desc: "การใช้คำสั่งเขียนและอ่านค่าข้อความอย่างง่ายผ่านคีย์และแวลู",
+                        path: "./W5/lab6/lab6_1/lab6_1.html"
+                    },
+                    {
+                        id: "w5-lab6-2",
+                        num: "6.2",
+                        title: "Structured Data Storage",
+                        desc: "บันทึกออบเจกต์หรือชุดอาร์เรย์ที่ซับซ้อนใน LocalStorage",
+                        path: "./W5/lab6/lab6_2/lab6_2.html"
+                    }
+                ]
+            },
+            lab7: {
+                title: "Lab 7: Animations & Timer Control",
+                description: "การควบคุมช่วงเวลา (Timers) และสร้างเอฟเฟกต์แอนิเมชันเบื้องต้นผ่านสคริปต์",
+                exercises: [
+                    {
+                        id: "w5-lab7-1",
+                        num: "7.1",
+                        title: "setInterval & Timer Events",
+                        desc: "ประมวลผลคำสั่งที่ระบุเป็นจังหวะตามกำหนดเวลาอย่างต่อเนื่อง",
+                        path: "./W5/lab7/lab7_1/lab7_1.html"
+                    },
+                    {
+                        id: "w5-lab7-2",
+                        num: "7.2",
+                        title: "Toggle Animation State",
+                        desc: "ใช้สคริปต์เปิดปิดคลาสของ CSS เพื่อให้เกิดการเปลี่ยนผ่านที่สมูท",
+                        path: "./W5/lab7/lab7_2/lab7_2.html"
+                    }
+                ]
+            },
+            lab8: {
+                title: "Lab 8: Fetch API & Async Data",
+                description: "การดึงข้อมูลจากภายนอกผ่านเครือข่ายด้วย Fetch API แบบอิงสัญญา (Promise)",
+                exercises: [
+                    {
+                        id: "w5-lab8-1",
+                        num: "8.1",
+                        title: "Basic Fetch Request",
+                        desc: "ส่งคำร้องขอข้อมูลรูปแบบ JSON จาก API ปลายทางอย่างง่าย",
+                        path: "./W5/lab8/lab8_1/lab8_1.html"
+                    },
+                    {
+                        id: "w5-lab8-2",
+                        num: "8.2",
+                        title: "Dynamic Cards from API",
+                        desc: "นำข้อมูลที่ได้รับจาก API มาสร้างรายการการ์ดแสดงผลบนหน้าเว็บไซต์จริง",
+                        path: "./W5/lab8/lab8_2/lab8_2.html"
+                    }
+                ]
+            }
+        };
+        // Load active lab
+        function switchLab(labKey) {
+            const lab = labsData[labKey];
+            if (!lab) return;
+            // Update active state of tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200";
+            });
+            const activeBtn = document.getElementById('btn-' + labKey);
+            if (activeBtn) {
+                activeBtn.className = "tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-indigo-600 text-white shadow-glow-indigo";
+            }
+            // Update lab description text
+            document.getElementById('lab-desc').innerText = "หัวข้อ: " + lab.title;
+            // Render Exercises
+            const container = document.getElementById('exercises-list');
+            container.innerHTML = '';
+            lab.exercises.forEach(ex => {
+                const itemHtml = `
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl bg-slate-900/40 border border-slate-900 hover:bg-slate-900/70 hover:border-slate-800/80 transition-all group/item">
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-950 border border-indigo-900/60 text-xs font-bold text-indigo-400 font-mono">
+                ${ex.num}
+              </span>
+              <div>
+                <h4 class="text-sm font-bold text-slate-200 group-hover/item:text-indigo-400 transition-colors">${ex.title}</h4>
+                <p class="text-xs text-slate-400 font-light mt-0.5">${ex.desc}</p>
+              </div>
+            </div>
+            <a href="${ex.path}" 
+               id="${ex.id}"
+               class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-indigo-600 text-slate-300 hover:text-white border border-slate-700 hover:border-indigo-500 transition-all self-start sm:self-center">
+              <span>รันโปรแกรม</span>
+              <i data-lucide="play" class="w-3 h-3 fill-current"></i>
+            </a>
+          </div>
+        `;
+                container.insertAdjacentHTML('beforeend', itemHtml);
+            });
+            // Re-run lucide icons creation
+            lucide.createIcons();
+        }
+        // Initialize layout with Lab 1
+        window.addEventListener('DOMContentLoaded', () => {
+            switchLab('lab1');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>
